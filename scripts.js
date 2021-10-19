@@ -5,7 +5,7 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
 function getVideo() {
-    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+    navigator.mediaDevices.getUserMedia({audio: false, video: {width: 640, height: 480}})
         .then(localMediaStream => {
             console.log(localMediaStream);
             video.src = window.URL.createObjectURL(localMediaStream);
